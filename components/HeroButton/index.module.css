@@ -1,0 +1,14 @@
+.HeroButton {
+  padding: 6px 12px;
+  margin-top: 1em;
+  transition: all 0.1s ease;
+  box-shadow: 4px 4px 0 black;
+  border: 2px solid black;
+  background: #e4d8c9;
+  cursor: pointer;
+}
+
+.HeroButton:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px black;
+}

@@ -1,18 +1,49 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PtwuLogo from '../../assets/img/ptwulogo.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  Bars3BottomRightIcon,
-  MoonIcon as MoonIconOutline,
-} from '@heroicons/react/24/outline';
+import { MoonIcon as MoonIconOutline } from '@heroicons/react/24/outline';
 import { MoonIcon as MoonIconSolid } from '@heroicons/react/24/solid';
-import { useRouter } from 'next/router';
 
 export default function Navbar() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
   const [isInDarkMode, setIsInDarkMode] = useState(false);
-  const { route } = useRouter();
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 1000) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+  });
+
+  const blogItem = (
+    <Link
+      className="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
+      href="/blog"
+    >
+      <span className="ml-2">blog</span>
+    </Link>
+  );
+
+  const menuItems = (
+    <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+      <li className="nav-item">
+        <Link
+          className="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
+          href="/"
+        >
+          <span className="ml-2">home</span>
+        </Link>
+      </li>
+      <li>{blogItem}</li>
+    </ul>
+  );
 
   return (
     <nav className="relative flex flex-wrap items-center justify-between md:px-20 py-10 bg-navtan">
@@ -29,56 +60,30 @@ export default function Navbar() {
             />
           </Link>
           <Link
-            className="text-3xl font-sourcepro font-bold inline-block mr-4 py-2 whitespace-nowrap text-white hover:opacity-75"
+            className="text-3xl font-sourcepro font-bold inline-block mr-4 py-2 whitespace-nowrap text-black hover:opacity-75"
             href="/"
           >
             Peter Wu
           </Link>
-
-          <Bars3BottomRightIcon
-            className="cursor-pointer flex-shrink-0 h-6 w-6 fill-current lg:hidden"
-            onClick={() => setNavbarOpen(!navbarOpen)}
-            type="button"
-          />
         </div>
+
+        {isMobile ? (
+          blogItem
+        ) : (
+          <div className="lg:flex flex-grow items-center">{menuItems}</div>
+        )}
 
         {isInDarkMode ? (
           <MoonIconSolid
-            className="ml-2 flex-shrink-0 h-6 w-6 cursor-pointer"
+            className="ml-3 flex-shrink-0 h-6 w-6 cursor-pointer"
             onClick={() => setIsInDarkMode(false)}
           />
         ) : (
           <MoonIconOutline
-            className="ml-2 flex-shrink-0 h-6 w-6 cursor-pointer"
+            className="ml-3 flex-shrink-0 h-6 w-6 cursor-pointer"
             onClick={() => setIsInDarkMode(true)}
           />
         )}
-
-        <div
-          className={
-            'lg:flex flex-grow items-center' +
-            (navbarOpen ? ' flex' : ' hidden')
-          }
-        >
-          <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-            <li className="nav-item">
-              <Link
-                className="px-3 py-2 flex items-center text-md font-bold leading-snug text-white hover:opacity-75"
-                href="/"
-              >
-                <span className="ml-2">home</span>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="px-3 py-2 flex items-center text-md font-bold leading-snug text-white hover:opacity-75"
-                href="/blog"
-              >
-                <span className="ml-2">blog</span>
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
   );
