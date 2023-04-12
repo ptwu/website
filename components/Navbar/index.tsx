@@ -2,24 +2,30 @@ import { useState } from 'react';
 import PtwuLogo from '../../assets/img/ptwulogo.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  Bars3BottomRightIcon,
+  MoonIcon as MoonIconOutline,
+} from '@heroicons/react/24/outline';
+import { MoonIcon as MoonIconSolid } from '@heroicons/react/24/solid';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [isInDarkMode, setIsInDarkMode] = useState(false);
+  const { route } = useRouter();
 
   return (
-    <nav className="relative flex flex-wrap items-center justify-between px-20 py-10 bg-navtan mb-3">
+    <nav className="relative flex flex-wrap items-center justify-between md:px-20 py-10 bg-navtan mb-3">
       <div className="md:container px-4 mx-auto flex flex-wrap items-center justify-between">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <div className="flex items-center flex-shrink-2 text-white">
           <Link
             className="text-xl font-bold inline-block mr-4 py-2 whitespace-nowrap text-white hover:opacity-75 "
             href="/"
           >
             <Image
               src={PtwuLogo}
-              width={50}
-              height={50}
               alt="Peter Wu logo"
-              className="hover:opacity-75 cursor-pointer"
+              className="hover:opacity-75 flex-shrink-0 cursor-pointer h-12 w-12"
             />
           </Link>
           <Link
@@ -28,14 +34,26 @@ export default function Navbar() {
           >
             Peter Wu
           </Link>
-          <button
-            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-            type="button"
+
+          <Bars3BottomRightIcon
+            className="cursor-pointer flex-shrink-0 h-6 w-6 fill-current lg:hidden"
             onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            <i className="fas fa-bars"></i>
-          </button>
+            type="button"
+          />
         </div>
+
+        {isInDarkMode ? (
+          <MoonIconSolid
+            className="ml-2 flex-shrink-0 h-6 w-6 cursor-pointer"
+            onClick={() => setIsInDarkMode(false)}
+          />
+        ) : (
+          <MoonIconOutline
+            className="ml-2 flex-shrink-0 h-6 w-6 cursor-pointer"
+            onClick={() => setIsInDarkMode(true)}
+          />
+        )}
+
         <div
           className={
             'lg:flex flex-grow items-center' +
