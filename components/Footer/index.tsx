@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-black">
+    <footer className="bg-slate-900">
       <div className="w-full p-4 md:flex md:items-center md:justify-center">
         <p className="text-sm md:text-center text-white m-4">
           © 2023 Peter Wu.
