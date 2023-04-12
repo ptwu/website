@@ -6,12 +6,13 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'navtan': {
+      navtan: {
         DEFAULT: '#E4D8C9',
       },
     },
     fontFamily: {
-      'sourceserif': ['Source Serif Pro', 'serif']
+      sourcepro: ['"Source Serif Pro"', 'serif'],
+      jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
     },
   },
   plugins: [],
