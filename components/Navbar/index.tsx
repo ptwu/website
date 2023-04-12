@@ -15,7 +15,7 @@ export default function Navbar() {
   const { route } = useRouter();
 
   return (
-    <nav className="relative flex flex-wrap items-center justify-between md:px-20 py-10 bg-navtan mb-3">
+    <nav className="relative flex flex-wrap items-center justify-between md:px-20 py-10 bg-navtan">
       <div className="md:container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="flex items-center flex-shrink-2 text-white">
           <Link

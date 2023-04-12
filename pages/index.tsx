@@ -1,5 +1,8 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
+import HxhArt from '../assets/img/hxhart.png';
+import Image from 'next/image';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -38,6 +41,14 @@ export default function Home() {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <Navbar />
+      <div className="bg-slate-100 min-h-screen hero container max-w-screen-lg mx-auto pb-10">
+        <Image
+          src={HxhArt}
+          className="w-full md:w-1/2 mx-auto"
+          alt="Line art from Hunter x Hunter. The characters are looking up at a galaxy."
+        />
+      </div>
+      <Footer />
     </>
   );
 }
