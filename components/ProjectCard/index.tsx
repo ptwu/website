@@ -1,9 +1,9 @@
-import { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 type Props = {
   name: string;
   description: (string | JSX.Element)[] | string;
-  image: StaticImageData;
+  image: Image.StaticImageData;
   imageAltText: string;
   tags: string[];
 };
@@ -17,7 +17,13 @@ export default function ProjectCard({
 }: Props) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
-      <img className="w-full" src={image.src} alt={imageAltText} />
+      <Image
+        className="w-full"
+        src={image.src}
+        alt={imageAltText}
+        width={1000}
+        height={1000}
+      />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{name}</div>
         <p className="text-gray-700 text-base">{description}</p>

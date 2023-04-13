@@ -14,3 +14,4 @@ Staging:
   - Language - TypeScript
   - Styles - Tailwind CSS
   - Build System - Yarn
+  - Linter - ESLint
