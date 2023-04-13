@@ -4,7 +4,7 @@
     font-family: Plus Jakarta Sans, system-ui, sans-serif;
   }
   p {
-    word-spacing: 0.18em;
+    word-spacing: 0.17em;
   }
 }
 @import 'tailwindcss/base';

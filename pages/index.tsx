@@ -9,6 +9,7 @@ import ProjectCard from '@/components/ProjectCard';
 import Poker from '@/assets/img/poker.jpg';
 import Cascade from '@/assets/img/cascade.png';
 import Fitme from '@/assets/img/fitme.png';
+import AttentionGrabbingHeading from '@/components/AttentionGrabbingHeading';
 
 export default function Home() {
   return (
@@ -20,14 +21,12 @@ export default function Home() {
       <div className="min-h-screen hero container max-w-screen-xl mx-auto pb-10 m-0">
         <Image
           src={HxhArt}
-          className="w-full md:w-3/5 mx-auto"
-          alt="Line art from Hunter x Hunter. The characters are looking up at a galaxy."
+          className="w-full md:w-3/5 mx-auto dark:invert-95"
+          alt="Line art from Hunter x Hunter made by me."
         />
-        <div className="grid grid-flow-row sm:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3">
+        <div className="grid grid-flow-row sm:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3 dark:text-zinc-100">
           <div className="col-span-2">
-            <h1 className="font-sourcepro text-5xl font-bold text-purple-900">
-              Hey, I&apos;m Peter<span className="text-purple-300">.</span>
-            </h1>
+            <AttentionGrabbingHeading text="Hey, I'm Peter" hasPeriod />
             <p className="mt-2">
               I&apos;m currently a student at Cornell University, where I&apos;m
               finishing up a B.S. in Computer Science. I like weird music,
@@ -64,23 +63,21 @@ export default function Home() {
             <Image
               src={Portrait}
               className="w-96 mx-auto"
-              alt="Portrait of Peter in Ninh Binh, Vietnam."
+              alt="Portrait of Peter"
             />
           </div>
         </div>
 
         <div className="grid grid-flow-row gap-8 md:px-32 w-full">
           <div>
-            <h1 className="font-sourcepro text-5xl font-bold text-purple-900 mb-3">
-              Previous Work
-            </h1>
+            <AttentionGrabbingHeading text="Previous Work" hasPeriod={false} />
             <div className="grid grid-flow-row sm:grid-flow-col gap-8 mx-auto container w-full pb-3">
               <ProjectCard
                 name="Cascade"
                 description={[
                   <a
                     target="_blank"
-                    className="underline text-blue-500"
+                    className="underline text-blue-500 dark:text-blue-300"
                     rel="noopener noreferrer"
                     href="https://github.com/Derecho-Project/cascade"
                     key="cascade-1"
@@ -90,7 +87,7 @@ export default function Home() {
                   ' is a C++17 cloud application framework powered by optimized ',
                   <a
                     target="_blank"
-                    className="underline text-blue-500"
+                    className="underline text-blue-500 dark:text-blue-300"
                     rel="noopener noreferrer"
                     href="https://en.wikipedia.org/wiki/Remote_direct_memory_access"
                     key="cascade-2"
@@ -106,10 +103,10 @@ export default function Home() {
               <ProjectCard
                 name="Distributed Texas Hold 'Em Poker"
                 description={[
-                  'Dealing with the isolation of the pandemic in the spring of 2020, I made this multiplayer web game which implements a classic poker game to play with friends and family. Built with socket.io, Node.js, and Express. ',
+                  'To ease the isolation of the pandemic back in Spring 2020, I made this multiplayer web game which implements a classic poker game to play with friends and family. Built with socket.io, Node.js, and Express. ',
                   <a
                     target="_blank"
-                    className="underline text-blue-500"
+                    className="underline text-blue-500 dark:text-blue-300"
                     rel="noopener noreferrer"
                     href="https://github.com/ptwu/distributed-texasholdem/"
                     key="poker-1"
@@ -127,6 +124,7 @@ export default function Home() {
                   'fitme is a platform for fashion, powered by computer vision. We built a microservice using Flask, Docker, and ',
                   <a
                     target="_blank"
+                    className="underline text-blue-500 dark:text-blue-300"
                     rel="noopener noreferrer"
                     href="https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/"
                     key="fitme-1"
@@ -136,7 +134,7 @@ export default function Home() {
                   ' which is based on Mask R-CNN. We then connected this with a TypeScript React webapp allowing users to upload and segment fit images. ',
                   <a
                     target="_blank"
-                    className="underline text-blue-500"
+                    className="underline text-blue-500 dark:text-blue-300"
                     rel="noopener noreferrer"
                     href="https://www.youtube.com/watch?v=icFoew4bchg/"
                     key="fitme-2"
