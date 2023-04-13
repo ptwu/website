@@ -50,7 +50,7 @@ export default function Home() {
       <div className="min-h-screen hero container max-w-screen-xl mx-auto pb-10 m-0">
         <Image
           src={HxhArt}
-          className="w-full md:w-2/3 mx-auto"
+          className="w-full md:w-3/5 mx-auto"
           alt="Line art from Hunter x Hunter. The characters are looking up at a galaxy."
         />
         <div className="grid grid-flow-row sm:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3">
@@ -104,7 +104,7 @@ export default function Home() {
             <h1 className="font-sourcepro text-5xl font-bold text-purple-900 mb-3">
               Previous Work
             </h1>
-            <div className="grid grid-flow-row sm:grid-flow-col gap-8 container w-full pb-3">
+            <div className="grid grid-flow-row sm:grid-flow-col gap-8 mx-auto container w-full pb-3">
               <ProjectCard
                 name="Cascade"
                 description={[
