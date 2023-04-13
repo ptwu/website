@@ -26,24 +26,24 @@ export default function Home() {
         <div className="grid grid-flow-row sm:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3">
           <div className="col-span-2">
             <h1 className="font-sourcepro text-5xl font-bold text-purple-900">
-              Hey, I'm Peter<span className="text-purple-300">.</span>
+              Hey, I&apos;m Peter<span className="text-purple-300">.</span>
             </h1>
             <p className="mt-2">
-              I'm currently a student at Cornell University, where I'm finishing
-              up a B.S. in Computer Science. I like weird music, basketball, and
-              travel (not in basketball though). Work-wise, I like to consider
-              myself a generalist, but I most enjoy working on impactful and
-              performant systems with a research-like focus.
+              I&apos;m currently a student at Cornell University, where I&apos;m
+              finishing up a B.S. in Computer Science. I like weird music,
+              basketball, and travel (not in basketball though). Work-wise, I
+              like to consider myself a generalist, but I most enjoy working on
+              impactful and performant systems with a research-like focus.
             </p>
             <p className="mt-2">
-              Most recently, I've been doing cloud / distributed computing
+              Most recently, I&apos;ve been doing cloud / distributed computing
               research with the <b>Cascade</b> group, under the supervision of
-              Ken Birman. We're working on a distributed framework for
+              Ken Birman. We&apos;re working on a distributed framework for
               applications that need strong consistency and availability at low
               latency.
             </p>
             <p className="mt-2">
-              Please feel free to reach out if you'd like to chat!
+              Please feel free to reach out if you&apos;d like to chat!
             </p>
             <ul>
               <li className="w-fit inline-block mr-4">
@@ -83,6 +83,7 @@ export default function Home() {
                     className="underline text-blue-500"
                     rel="noopener noreferrer"
                     href="https://github.com/Derecho-Project/cascade"
+                    key="cascade-1"
                   >
                     Cascade
                   </a>,
@@ -92,6 +93,7 @@ export default function Home() {
                     className="underline text-blue-500"
                     rel="noopener noreferrer"
                     href="https://en.wikipedia.org/wiki/Remote_direct_memory_access"
+                    key="cascade-2"
                   >
                     RDMA
                   </a>,
@@ -110,6 +112,7 @@ export default function Home() {
                     className="underline text-blue-500"
                     rel="noopener noreferrer"
                     href="https://github.com/ptwu/distributed-texasholdem/"
+                    key="poker-1"
                   >
                     GitHub Repo
                   </a>,
@@ -126,8 +129,9 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/"
+                    key="fitme-1"
                   >
-                    Facebook AI's Detectron2
+                    Facebook AI&apos;s Detectron2
                   </a>,
                   ' which is based on Mask R-CNN. We then connected this with a TypeScript React webapp allowing users to upload and segment fit images. ',
                   <a
@@ -135,6 +139,7 @@ export default function Home() {
                     className="underline text-blue-500"
                     rel="noopener noreferrer"
                     href="https://www.youtube.com/watch?v=icFoew4bchg/"
+                    key="fitme-2"
                   >
                     Demo Video
                   </a>,
