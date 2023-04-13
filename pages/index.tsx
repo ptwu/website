@@ -45,17 +45,17 @@ export default function Home() {
             <p className="mt-2">
               Please feel free to reach out if you&apos;d like to chat!
             </p>
-            <ul>
-              <li className="w-fit inline-block mr-4">
+            <ul className="md: mb-1 xs:mb-2">
+              <li className="w-fit inline-block mr-4 mx-auto">
                 <HeroButton name="Resume" link="/Resume.pdf" />
               </li>
-              <li className="w-fit inline-block mr-4">
+              <li className="w-fit inline-block mr-4 mx-auto">
                 <HeroButton
                   name="LinkedIn"
                   link="https://www.linkedin.com/in/peterlingwu/"
                 />
               </li>
-              <li className="w-fit inline-block mr-4">
+              <li className="w-fit inline-block mr-4 mx-auto">
                 <HeroButton name="GitHub" link="https://github.com/ptwu" />
               </li>
             </ul>
@@ -63,7 +63,7 @@ export default function Home() {
           <div>
             <Image
               src={Portrait}
-              className="w-96"
+              className="w-96 mx-auto"
               alt="Portrait of Peter in Ninh Binh, Vietnam."
             />
           </div>
