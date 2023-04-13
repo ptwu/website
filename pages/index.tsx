@@ -61,9 +61,9 @@ export default function Home() {
             <p className="mt-2">
               I'm currently a student at Cornell University, where I'm finishing
               up a B.S. in Computer Science. I like weird music, basketball, and
-              travel. Work-wise, I like to consider myself a generalist, but
-              most enjoy working on impactful and performant systems with a
-              research-like focus.
+              travel (not in basketball though). Work-wise, I like to consider
+              myself a generalist, but I most enjoy working on impactful and
+              performant systems with a research-like focus.
             </p>
             <p className="mt-2">
               Most recently, I've been doing cloud / distributed computing
@@ -133,10 +133,20 @@ export default function Home() {
               />
               <ProjectCard
                 name="Distributed Texas Hold 'Em Poker"
-                description="Dealing with the isolation of the pandemic in the spring of 2020, I made this multiplayer web game which implements a classic poker game to play with friends and family. Built with socket.io, Node.js, and Express."
+                description={[
+                  'Dealing with the isolation of the pandemic in the spring of 2020, I made this multiplayer web game which implements a classic poker game to play with friends and family. Built with socket.io, Node.js, and Express. ',
+                  <a
+                    target="_blank"
+                    className="underline text-blue-500"
+                    rel="noopener noreferrer"
+                    href="https://github.com/ptwu/distributed-texasholdem/"
+                  >
+                    GitHub Repo
+                  </a>,
+                ]}
                 image={Poker}
                 imageAltText="Image of the Distributed Texas Hold 'Em poker interface."
-                tags={['websockets', 'node.js']}
+                tags={['websockets', 'node.js', 'express']}
               />
               <ProjectCard
                 name="fitme"

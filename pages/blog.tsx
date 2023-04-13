@@ -43,10 +43,10 @@ export default function Blog() {
         <div className="grid grid-flow-row sm:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3">
           <div className="col-span-2">
             <h1 className="font-sourcepro text-5xl font-bold text-purple-900">
-              Blog<span className="text-purple-300">.</span>
+              Blog
             </h1>
             <p className="mt-2">
-              Here you'll find some misc. writings that I may or may not keep
+              Here you'll find some misc. writings which I may or may not keep
               up-to-date over the years.
             </p>
           </div>
