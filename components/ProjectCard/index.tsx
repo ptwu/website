@@ -3,7 +3,7 @@ import Image from 'next/image';
 type Props = {
   name: string;
   description: (string | JSX.Element)[] | string;
-  image: Image.StaticImageData;
+  image: StaticImageData;
   imageAltText: string;
   tags: string[];
 };
