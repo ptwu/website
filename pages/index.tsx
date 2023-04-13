@@ -51,7 +51,7 @@ export default function Home() {
               <li className="w-fit inline-block mr-4 mx-auto">
                 <HeroButton
                   name="LinkedIn"
-                  link="https://www.linkedin.com/in/peterlingwu/"
+                  link="https://www.linkedin.com/in/~peter/"
                 />
               </li>
               <li className="w-fit inline-block mr-4 mx-auto">
