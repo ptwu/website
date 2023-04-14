@@ -11,8 +11,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta
           name="description"
-          content="I'm a software engineer based in NYC from Cornell interested in building and researching distributed systems, and pushing software to hardware boundaries."
+          content="I'm Peter, and I'm a software engineer based in NYC from Cornell. I'm interested in building better systems software, and producing positive impact while at it."
         />
+        <meta property="og:image" content="/ptwuLogoBanner.png" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="apple-touch-icon"
