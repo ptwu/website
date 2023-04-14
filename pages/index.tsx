@@ -44,7 +44,7 @@ export default function Home() {
             <p className="mt-2">
               Please feel free to reach out if you&apos;d like to chat!
             </p>
-            <ul className="md: mb-1 xs:mb-2">
+            <ul className="mt-6">
               <li className="w-fit inline-block mr-4 mx-auto">
                 <HeroButton name="Resume" link="/Resume.pdf" />
               </li>
@@ -108,10 +108,10 @@ export default function Home() {
                     target="_blank"
                     className="underline text-blue-500 dark:text-blue-300"
                     rel="noopener noreferrer"
-                    href="https://github.com/ptwu/distributed-texasholdem/"
+                    href="https://distributed-texasholdem.onrender.com/"
                     key="poker-1"
                   >
-                    GitHub Repo
+                    Link to Website
                   </a>,
                 ]}
                 image={Poker}
