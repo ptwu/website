@@ -1,4 +1,4 @@
-# website
+# ENGRC 3025 Portfolio Website
 
 ![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=website-ptwu)
 
