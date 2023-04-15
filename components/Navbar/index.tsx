@@ -21,7 +21,7 @@ export default function Navbar() {
   const firstRender = useFirstRender();
 
   const handleResize = () => {
-    if (window.innerWidth <= 1000) {
+    if (window.innerWidth <= 1200) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -60,7 +60,7 @@ export default function Navbar() {
 
   const blogItem = (
     <Link
-      className="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75 dark:text-zinc-100"
+      className="px-3 py-2 flex items-right text-right text-md font-bold leading-snug text-black hover:opacity-75 dark:text-zinc-100 ml-auto"
       href="/blog"
     >
       <span className="ml-2">blog</span>
@@ -106,7 +106,7 @@ export default function Navbar() {
         {isMobile ? (
           blogItem
         ) : (
-          <div className="lg:flex flex-grow items-center">{menuItems}</div>
+          <div className="lg:flex flex-grow items-right">{menuItems}</div>
         )}
 
         {isInDarkMode ? (

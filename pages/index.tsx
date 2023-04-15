@@ -24,7 +24,7 @@ export default function Home() {
           className="w-full md:w-3/5 mx-auto dark:invert-95"
           alt="Line art from Hunter x Hunter made by me."
         />
-        <div className="grid grid-flow-row sm:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3 dark:text-zinc-100">
+        <div className="grid grid-flow-row lg:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3 dark:text-zinc-100">
           <div className="col-span-2">
             <AttentionGrabbingHeading text="Hey, I'm Peter" hasPeriod />
             <p className="mt-2">
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="grid grid-flow-row gap-8 md:px-32 w-full">
           <div>
             <AttentionGrabbingHeading text="Previous Work" hasPeriod={false} />
-            <div className="grid grid-flow-row sm:grid-flow-col gap-8 mx-auto container w-full pb-3">
+            <div className="grid grid-flow-row lg:grid-flow-col gap-8 mx-auto container w-full pb-3">
               <ProjectCard
                 name="Cascade"
                 description={[
