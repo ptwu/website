@@ -5,32 +5,39 @@ import React from 'react';
 import Link from 'next/link';
 import AttentionGrabbingHeading from '@/components/AttentionGrabbingHeading';
 import Tag from '@/components/Tag';
+import { getSortedPostsData } from '../lib/posts';
 
-type BlogPost = {
+interface AllPostsData {
+  id: string;
+  date: string;
   title: string;
-  date: Date;
   hashtags: string[];
+}
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+type Props = {
+  allPostsData: AllPostsData[];
 };
 
-const posts: BlogPost[] = [
-  {
-    title: 'Why my most-starred GitHub repo deserves to live in infamy',
-    date: new Date(2023, 3, 15),
-    hashtags: ['node.js', 'webdev'],
-  },
-  {
-    title: 'Tiramisu',
-    date: new Date(2023, 1, 22),
-    hashtags: ['food'],
-  },
-  {
-    title: 'Comparing C++ and C# interop methods',
-    date: new Date(2023, 1, 1),
-    hashtags: ['c++', 'c#', 'systems', 'research'],
-  },
-];
+export const getNonZeroIndexedDateString = (iso8601String: string): string => {
+  const [year, month, day] = iso8601String.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+};
 
-export default function Blog() {
+export default function Blog({ allPostsData }: Props) {
   return (
     <>
       <Head>
@@ -43,23 +50,20 @@ export default function Blog() {
             <AttentionGrabbingHeading text="Blog" hasPeriod={false} />
             <p className="mt-2 dark:text-zinc-100">
               Here you&apos;ll find some misc. writings which I may or may not
-              keep up-to-date over the years.
+              keep up to date over the years.
             </p>
           </div>
 
-          <h3 className="text-2xl font-bold mt-10 dark:text-zinc-100">
-            Preview of future articles to come (not written yet)
-          </h3>
           {/* render posts in a data-driven way */}
-          {posts.map(({ title, date, hashtags }, idx) => (
+          {allPostsData.map(({ id, title, date, hashtags }, idx) => (
             <React.Fragment key={`blog-post-${idx}`}>
-              <Link href="/blog">
+              <Link href="/blog/[id]" as={`/blog/${id}`}>
                 <h2 className="text-xl font-bold text-purple-900 mt-8 underline dark:text-fuchsia-200">
                   {title}
                 </h2>
               </Link>
-              <p className="dark:text-zinc-100">
-                posted on {date.toLocaleDateString()}
+              <p className="dark:text-zinc-100 mb-1">
+                posted on {getNonZeroIndexedDateString(date)}
               </p>
               {hashtags.map((tag, idx) => (
                 <Tag text={tag} hasHashtag key={idx} />
