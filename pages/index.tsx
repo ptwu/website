@@ -59,13 +59,11 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div>
-            <Image
-              src={Portrait}
-              className="w-96 mx-auto"
-              alt="Portrait of Peter"
-            />
-          </div>
+          <Image
+            src={Portrait}
+            className="w-96 mx-auto"
+            alt="Portrait of Peter"
+          />
         </div>
 
         <div className="grid grid-flow-row gap-8 md:px-32 w-full">
