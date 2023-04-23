@@ -17,7 +17,7 @@ export default function ProjectCard({
   tags,
 }: Props) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto dark:text-zinc-100 dark:bg-gray-600">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto dark:text-zinc-100 dark:bg-gray-600 ml-1 mr-1">
       <Image
         className="w-full"
         src={image.src}
