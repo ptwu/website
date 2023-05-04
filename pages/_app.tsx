@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta
           name="description"
-          content="I'm Peter, and I'm a software engineer based in NYC from Cornell. I'm interested in building better systems software, and producing positive impact while at it."
+          content="I'm Peter, and I'm currently a software engineer at Citadel based in NYC from Cornell."
         />
         <meta property="og:image" content="/ptwuLogoBanner.png" />
 
@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+        <base target="_blank" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
