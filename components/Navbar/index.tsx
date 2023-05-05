@@ -77,6 +77,22 @@ export default function Navbar() {
           <span className="ml-2">home</span>
         </Link>
       </li>
+      <li className="nav-item">
+        <Link
+          className="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75 dark:text-zinc-100"
+          href="/teaching"
+        >
+          <span className="ml-2">teaching</span>
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          className="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75 dark:text-zinc-100"
+          href="/infographics"
+        >
+          <span className="ml-2">infographics</span>
+        </Link>
+      </li>
       <li>{blogItem}</li>
     </ul>
   );

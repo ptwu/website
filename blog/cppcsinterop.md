@@ -3,7 +3,7 @@ title: 'Implementing C++/C# interop for Linux'
 date: '2023-04-19'
 hashtags: ['systems', 'cpp', 'csharp', 'linux', 'research']
 leadingImagePath: '/dotnetcpp.png'
-blurb: "I was pretty surprised to find a lack of good C++/C# interop resources online for Linux, given that most of the online tutorials were for C++/CLI, which only works with Windows. Here, we'll explore the basics, internals, and gory bits like making pointers to native memory safely, with some remarks on performance."
+blurb: "I was pretty surprised to find a lack of good C++/C# interop resources online for Linux, given that most of the online tutorials were for C++/CLI, which only works with Windows. Here, we'll explore the basics and internals, with some remarks on performance."
 ---
 
 # Getting started
@@ -101,16 +101,14 @@ _Insight: Prefer blittable types in interop scenarios whenever possible, whether
 parameters or struct fields. If you have extremely complicated data structures, try to break down
 function calls between C++ and C# to the truly necessary parts._
 
-# Your C++/C# interop options
-
-## Platform Invoke (P/Invoke)
+# Platform Invoke (P/Invoke)
 
 Platform Invoke (P/Invoke) is a built-in interface in the `System` and
 `System.Runtime.InteropServices` namespaces of C#, so no external installation required.
 The mechanism is very simple for calling unmanaged code from managed code, but going the other
 way around is a little verbose.
 
-### Calling C++ (or even C) code from C#
+## Calling C++ (or even C) code from C#
 
 To start, let's define a C++ library for use in C#. A very important thing to note is that **all
 C++ code must have C-style linkage in order to be used in C#.**. This means that you cannot use
@@ -152,7 +150,7 @@ class ExampleCSharpApplication
 }
 ```
 
-### Calling C# code from C++
+## Calling C# code from C++
 
 On the other hand, calling C# code from C++ is a little more complicated. Given some managed code
 you want to call, you will need to create a delegate and pass it as a callback to the unmanaged
@@ -224,85 +222,13 @@ _Insight: Use P/Invoke as a first choice if C++ headers are installed as system 
 make their shared libraries accessible by name. Also, all C++ exported functions must have
 C-style linkage._
 
-## Command Language Runtime (CLR) Hosting
-
-If you don't know the name of your C++ DLL a priori, or you want full control of the
-lifetime of the .NET runtime environment, go with common language runtime (CLR) hosting.
-Essentially, this entails writing custom infrastructure to load the CoreCLR components and start
-the runtime.
-
-I've implemented this as part of my research, and one of the few useful articles I've found is
-by Igor Ladnik on CodeProject. Read more [here](https://www.codeproject.com/Articles/1276328/Hosting-NET-Core-Components-in-Unmanaged-C-Cpluspl).
-
-# Gory stuff: working with native memory in managed code
-
-If you don't plan to use C++/C# interop for extremely performance-critical scenarios (below the ms
-level), you don't need to read this section.
-
-However, if you're in a position where avoiding the overhead of a `memcpy` is essential, you will
-absolutely need to access native memory via pointers, as marshalling data has a copying overhead.
-
-## Pinned memory and `unsafe`
-
-C# offers us the awesome (and dangerous) option to allocate unmanaged memory within managed code
-through the `unsafe` keyword and the `System.Runtime.InteropServices.Marshal` library. By using
-the `unsafe` keyword, a C# function can use pointers just like C++:
-
-```cs
-// Note the `unsafe` keyword, which allows us to use pointers.
-unsafe static void Main(string[] args)
-{
-    int x = 10;
-    int* p = &x;
-    *p = 20; // x now stores 20.
-}
-```
-
-From our discussion of managed and unmanaged code, managed code is usually marked by using garbage
-collection. With garbage collection comes great liberties, but less guarantees: managed objects
-are commonly moved around to avoid fragmentation and to allow optimizations. So our pointer `p`
-might get garbage collected during execution. To avoid this, we have two options (1) use the `fixed`
-keyword, to explicitly pin the pointer within a given scope, or (2) using `GCHandle` to pin it
-so it can be passed as a variable. I prefer (2), since we typically want to pin memory longer
-than the execution of a single function anyway. Just make sure to free the pointer before you're
-done with `Marshal.FreeHGlobal`.
-
-This allows us to allocate native memory with `Marshal.AllocHGlobal` and convert C# structures to
-pointers through `Marshal.StructureToPtr`, among much more.
-
-## Safely handling pointers
-
-A useful construct to follow when working with native memory pointers owned on the C# side is
-to use a try/catch/finally structure, as in the below code I used in my Cascade research:
-
-```cs
-IntPtr emitKeyPtr = Marshal.StringToHGlobalAnsi("some string");
-IntPtr emitBytesPtr = Marshal.AllocHGlobal(1);
-try
-{
-    Int32 val = 1;
-    Marshal.StructureToPtr(val, emitBytesPtr);
-    emit(emitKeyPtr, emitBytesPtr);
-}
-catch (Exception)
-{
-    Console.WriteLine("Exception caught when emitting data.");
-}
-finally
-{
-    // Avoid memory leaks by freeing all memory allocated here.
-    Marshal.FreeHGlobal(emitKeyPtr);
-    Marshal.FreeHGlobal(emitBytesPtr);
-}
-```
-
-Consider if we reach an exception and execution is interrupted after the memory is allocated to
-either the key or bytes pointers, which are passed to the emit function. Then, we will never have
-deallocated memory, and resulted in a memory leak. The finally block ensures that we don’t forget to
-free the memory in either case after they are used in the emit function.
-
 # Case study: Cascade
 
 The original purpose I had for implementing C++/C# interop was for the Cascade system. You can
 read more about how I did it in the [paper I wrote here](/cascade_cs_writeup.pdf). There's also
 a good bit on the performance of the system, which is based on hosting the CLR.
+
+# Online machine learning on the NBA paper
+
+Please see [here for a co-authored paper by me on the performance of an online machine learning
+model on the NBA](/online_sports_ml.pdf).

@@ -64,11 +64,102 @@ export default function Home() {
             <Image
               src={Portrait}
               className="w-56 md:w-42 lg:w-96 mx-auto"
-              alt="Portrait of Peter"
+              alt="Portrait of Peter in Ninh Binh, Vietnam."
             />
           </div>
         </div>
-
+        <div className="grid mx-auto flex justify-center items-center grid-flow-row lg:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3 dark:text-zinc-100">
+          <div>
+            <div className="col-span-1">
+              <AttentionGrabbingHeading text="Education" hasPeriod={false} />
+            </div>
+            <div className="grid grid-flow-row lg:grid-flow-col gap-8 mx-auto container w-full pb-3">
+              <h1 className="text-3xl">
+                Cornell University B.S. (hopefully 🤔), 2023
+              </h1>
+              <h3>
+                At Cornell&apos;s College of Engineering, I&apos;ve taken a deep
+                breadth of courses, which range from a strong focus on machine
+                learning and data science (Computer Vision, Machine Learning,
+                Advanced Machine Learning Systems), as well as systems
+                development.
+              </h3>
+            </div>
+            <Image
+              src="/cornell.jpg"
+              width={500}
+              height={500}
+              className="mx-auto"
+              alt="Image of the Cornell University campus."
+            />
+          </div>
+        </div>
+        <div className="grid mx-auto flex justify-center items-center grid-flow-row lg:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3 dark:text-zinc-100">
+          <div>
+            <div className="col-span-1 mt-3">
+              <AttentionGrabbingHeading text="Work History" hasPeriod={false} />
+            </div>
+            <div className="grid grid-flow-row lg:grid-flow-col gap-8 mx-auto container w-full pb-3">
+              <Image
+                src="/youtube.png"
+                width={50}
+                height={50}
+                className="mx-auto"
+                alt="The YouTube logo."
+              />
+              <h1 className="text-lg">
+                <b>Summer 2022</b>: YouTube - Software Engineer Intern
+              </h1>
+              <h3>
+                I was a SWE intern on the Youtube TV Serving Infrastructure
+                team, where I got to develop some microservices in C++ for graph
+                data processing, and now these services run on millions of
+                videos. I also got a lot better at basketball during my downtime
+                at work!
+              </h3>
+            </div>
+            <div className="grid grid-flow-row lg:grid-flow-col gap-8 mx-auto container w-full pb-3">
+              <Image
+                src="/citadel.png"
+                width={50}
+                height={50}
+                className="mx-auto"
+                alt="The Citadel logo."
+              />
+              <h1 className="text-lg">
+                <b>Winter 2022</b>: Citadel - Software Engineer Intern
+              </h1>
+              <h3>
+                I took a semester off from school to work as a SWE intern at
+                Citadel, a hedge fund in New York, where I developed some cool
+                performant systems using C++, Java, and Python while learning a
+                lot about the financial industry. I got to see a lot of cloud
+                computing ideas in practice here, and had a lot of fun hanging
+                out in the city. This made me realize I wanted to return to New
+                York for full time.
+              </h3>
+            </div>
+            <div className="grid grid-flow-row lg:grid-flow-col gap-8 mx-auto container w-full pb-3">
+              <Image
+                src="/google.png"
+                width={50}
+                height={50}
+                className="mx-auto"
+                alt="The Google logo."
+              />
+              <h1 className="text-lg">
+                <b>Summer 2021</b>: Google - Software Engineer Intern
+              </h1>
+              <h3>
+                During the COVID-19 pandemic, I worked remotely for Google on
+                the Ads Advanced Solutions team. Here, I got to implement a lot
+                of programming languages ideas I learned in school in practice,
+                where I helped instrument a parser for a custom Python-like
+                language.
+              </h3>
+            </div>
+          </div>
+        </div>
         <div className="grid mx-auto flex justify-center items-center grid-flow-row lg:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3 dark:text-zinc-100">
           <div>
             <div className="col-span-2">
