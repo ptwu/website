@@ -74,9 +74,7 @@ export default function Home() {
               <AttentionGrabbingHeading text="Education" hasPeriod={false} />
             </div>
             <div className="grid grid-flow-row lg:grid-flow-col gap-8 mx-auto container w-full pb-3">
-              <h1 className="text-3xl">
-                Cornell University B.S. (hopefully 🤔), 2023
-              </h1>
+              <h1 className="text-3xl">Cornell University B.S., 2023</h1>
               <h3>
                 At Cornell&apos;s College of Engineering, I&apos;ve taken a deep
                 breadth of courses, which range from a strong focus on machine
