@@ -33,6 +33,8 @@ export default function Home() {
               basketball, and travel (not in basketball though). Work-wise, I
               like to consider myself a generalist, but I most enjoy working on
               impactful and performant systems with a research-like focus.
+              I&apos;ll be joining Citadel as a software engineer in their New
+              York office in August 2023.
             </p>
             <p className="mt-2">
               Most recently, I&apos;ve been doing cloud / distributed computing
