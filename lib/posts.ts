@@ -8,6 +8,17 @@ import remarkMath from 'remark-math';
 import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
+import rehypeHighlight from 'rehype-highlight';
+import langCpp from 'highlight.js/lib/languages/cpp';
+import langCs from 'highlight.js/lib/languages/csharp';
+import langBash from 'highlight.js/lib/languages/bash';
+import hljs from 'highlight.js';
+
+const languages = {
+  cpp: langCpp,
+  cs: langCs,
+  bash: langBash,
+};
 
 const postsDirectory = path.join(process.cwd(), 'blog');
 
@@ -72,11 +83,16 @@ export async function getPostData(filename?: string) {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkMath)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeKatex)
+    .use(rehypeHighlight, { languages: languages })
     .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+
+  hljs.registerLanguage('cpp', langCpp);
+  hljs.registerLanguage('cs', langCs);
+  hljs.registerLanguage('bash', langBash);
 
   // Combine the data with the id
   return {

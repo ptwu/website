@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import { getNonZeroIndexedDateString } from '../blog';
+import hljs from 'highlight.js';
+import { useEffect } from 'react';
 
 interface PostData {
   title: string;
@@ -20,6 +22,10 @@ interface PostData {
 
 const Post: React.FC<{ data: PostData }> = ({ data }) => {
   const { title, date, hashtags, blurb, leadingImagePath, contentHtml } = data;
+
+  useEffect(() => {
+    hljs.initHighlighting();
+  }, []);
 
   return (
     <>
@@ -50,14 +56,14 @@ const Post: React.FC<{ data: PostData }> = ({ data }) => {
             />
           </div>
           <div
-            className="dark:text-zinc-100 [&>p]:mb-3"
+            className="dark:text-zinc-100 [&>ul]:list-disc [&>ul]:ml-5 [&>p]:mb-3 [&>h1]:text-2xl [&>h1]:font-bold [&>h2]:text-lg [&>h2]:font-bold [&>h2]:mb-3 [&>h1]:mb-3 [&>h1]:mt-8 [&>h3]:mb-3 [&>h3]:mt-3 [&>h3]:text-md [&>h3]:font-bold [&_a]:underline [&_a]:text-blue-500 [&_a]:dark:text-blue-300 [&_code]:mb-2 [&_code]:mt-1 [&_img]:mx-auto [&_img]:w-3/5"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
           <Link
             href="/blog"
             className="text-blue-500 dark:text-blue-300 underline"
           >
-            <h4>back to blog listing</h4>
+            <h3 className="mt-8 text-md">back to blog listing</h3>
           </Link>
         </div>
       </div>
