@@ -56,7 +56,7 @@ const Post: React.FC<{ data: PostData }> = ({ data }) => {
             />
           </div>
           <div
-            className="dark:text-zinc-100 [&>ul]:list-disc [&>ul]:ml-5 [&>p]:mb-3 [&>h1]:text-2xl [&>h1]:font-bold [&>h2]:text-lg [&>h2]:font-bold [&>h2]:mb-2 [&>h1]:mb-2 [&>h1]:mt-8 [&_a]:underline [&_a]:text-blue-500 [&_a]:dark:text-blue-300 [&_code]:mb-2 [&_code]:mt-1 [&_img]:mx-auto [&_img]:w-3/5"
+            className="dark:text-zinc-100 [&>ul]:list-disc [&>ul]:ml-5 [&>p]:mb-3 [&>h1]:text-2xl [&>h1]:font-bold [&>h2]:text-lg [&>h2]:font-bold [&>h2]:mb-3 [&>h1]:mb-3 [&>h1]:mt-8 [&>h3]:mb-3 [&>h3]:mt-3 [&>h3]:text-md [&>h3]:font-bold [&_a]:underline [&_a]:text-blue-500 [&_a]:dark:text-blue-300 [&_code]:mb-2 [&_code]:mt-1 [&_img]:mx-auto [&_img]:w-3/5"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
           <Link
