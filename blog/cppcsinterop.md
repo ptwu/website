@@ -303,6 +303,10 @@ free the memory in either case after they are used in the emit function.
 
 # Case study: Cascade
 
-The original purpose I had for implementing C++/C# interop was for the Cascade system. You can
-read more about how I did it in the [paper I wrote here](/cascade_cs_writeup.pdf). There's also
+The original purpose I had for implementing C++/C# interop was for the Cascade system. Cascade is an
+ongoing research project, using RDMA to to enable super fast operations in distributed memory. You
+can read more about how I did it in the [paper I wrote here](/cascade_cs_writeup.pdf). There's also
 a good bit on the performance of the system, which is based on hosting the CLR.
+
+Also, the Cascade GitHub repo is [here](https://github.com/Derecho-Project/cascade), if you'd like
+to see the progress. Thanks for reading!

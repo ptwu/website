@@ -29,9 +29,9 @@ export default function Home() {
             <AttentionGrabbingHeading text="Hey, I'm Peter" hasPeriod />
             <p className="mt-2">
               I&apos;m currently a student at Cornell University, where I&apos;m
-              finishing up a B.S. in Computer Science. I like weird music,
-              basketball, and travel (not in basketball though). Work-wise, I
-              like to consider myself a generalist, but I most enjoy working on
+              finishing up a B.S. in Computer Science. I like music, basketball,
+              and travel (not in basketball though). Work-wise, I like to
+              consider myself a generalist, but I most enjoy working on
               impactful and performant systems with a research-like focus. As
               for future plans, I&apos;ll be joining Citadel as a software
               engineer in NYC in August 2023.
