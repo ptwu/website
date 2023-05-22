@@ -28,20 +28,20 @@ export default function Home() {
           <div className="col-span-2">
             <AttentionGrabbingHeading text="Hey, I'm Peter" hasPeriod />
             <p className="mt-2">
-              I&apos;m currently a student at Cornell University, where I&apos;m
-              finishing up a B.S. in Computer Science. I like music, basketball,
-              and travel (not in basketball though). Work-wise, I like to
-              consider myself a generalist, but I most enjoy working on
-              impactful and performant systems with a research-like focus. As
-              for future plans, I&apos;ll be joining Citadel as a software
-              engineer in NYC in August 2023.
+              I&apos;m a software engineer at Citadel LLC starting in August
+              2023. I like music, basketball, and travel (not in basketball
+              though). Work-wise, I like to consider myself a generalist, but I
+              most enjoy working on impactful and performant systems with a
+              research-like focus. Despite working in NYC, I still have a
+              fondness for being in the middle of nowhere, having previously
+              obtained a B.S. in Computer Science from Cornell.
             </p>
             <p className="mt-2">
-              Most recently, I&apos;ve been doing cloud / distributed computing
-              research with the <b>Cascade</b> group, under the supervision of
-              Ken Birman. We&apos;re working on a distributed framework for
-              applications that need strong consistency and availability at low
-              latency.
+              Most recently, I&apos;ve been spending my time doing cloud /
+              distributed computing research with Cornell&apos;s <b>Cascade</b>{' '}
+              and <b>Derecho</b> group, under the supervision of Ken Birman.
+              We&apos;re working on a distributed framework for applications
+              that need strong consistency and availability at low latency.
             </p>
             <p className="mt-2">
               Please feel free to reach out if you&apos;d like to chat!
@@ -102,7 +102,7 @@ export default function Home() {
                   >
                     RDMA
                   </a>,
-                  ' data paths. It provides a key/value API for data manipulation in distributed memory and persistent storage. Besides the API, Cascade allows injecting logic on the data paths for low-latency application. I developed C#/C++ interop with zero-copy guarantees.',
+                  ' data paths. It provides a key/value API for data manipulation in distributed memory and persistent storage. Besides the API, Cascade allows injecting logic on the data paths for low-latency application..',
                 ]}
                 image={Cascade}
                 imageAltText="Image of Cascade."
