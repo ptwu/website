@@ -102,7 +102,7 @@ export default function Home() {
                   >
                     RDMA
                   </a>,
-                  ' data paths. It provides a key/value API for data manipulation in distributed memory and persistent storage. Besides the API, Cascade allows injecting logic on the data paths for low-latency application..',
+                  ' data paths. It provides a key/value API for data manipulation in distributed memory and persistent storage. Besides the API, Cascade allows injecting logic on the data paths for low-latency application.',
                 ]}
                 image={Cascade}
                 imageAltText="Image of Cascade."
