@@ -8,6 +8,43 @@
   p {
     word-spacing: 0.17em;
   }
+  .blog-cta {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .blog-cta::before,
+  .blog-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% / 70%; /* Adjust the values to make it more elliptical */
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  }
+
+  .blog-cta::before {
+    transform: rotate(5deg);
+    z-index: -1;
+  }
+
+  .blog-cta::after {
+    transform: rotate(-5deg);
+    z-index: -2;
+  }
+
+  .blog-cta:hover {
+    filter: brightness(120%);
+  }
 }
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
