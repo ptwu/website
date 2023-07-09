@@ -28,13 +28,13 @@ export default function Home() {
           <div className="col-span-2">
             <AttentionGrabbingHeading text="Hey, I'm Peter" hasPeriod />
             <p className="mt-2">
-              I&apos;m a software engineer at Citadel starting in August 2023. I
-              like music, basketball, and travel (not in basketball though).
-              Work-wise, I like to consider myself a generalist, but I most
-              enjoy working on impactful and performant systems with a
-              research-like focus. Despite working in NYC, I still have a
-              fondness for being in the middle of nowhere, having previously
-              obtained a B.S. in Computer Science from Cornell.
+              I&apos;m a software engineer at Citadel. I like music, basketball,
+              and travel (not in basketball though). Work-wise, I like to
+              consider myself a generalist, but I most enjoy working on
+              impactful and performant systems with a research-like focus.
+              Despite working in NYC, I still have a fondness for being in the
+              middle of nowhere, having previously obtained a B.S. in Computer
+              Science from Cornell.
             </p>
             <p className="mt-2">
               Most recently, I&apos;ve been spending my time doing cloud /
