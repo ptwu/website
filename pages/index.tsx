@@ -10,6 +10,7 @@ import Poker from '@/assets/img/poker.jpg';
 import Cascade from '@/assets/img/cascade.png';
 import Fitme from '@/assets/img/fitme.png';
 import AttentionGrabbingHeading from '@/components/AttentionGrabbingHeading';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -156,6 +157,11 @@ export default function Home() {
               />
             </div>
           </div>
+        </div>
+        <div className="mx-auto mt-6 mb-3 font-bold flex justify-center items-center w-full dark:text-zinc-100">
+          <Link className="blog-cta text-2xl" href="/blog">
+            <button>read my blog</button>
+          </Link>
         </div>
       </div>
       <Footer />
