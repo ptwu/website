@@ -27,7 +27,7 @@
     height: 100%;
     border-radius: 50% / 70%; /* Adjust the values to make it more elliptical */
     border: 10px solid;
-    border-image-slice: 1;
+    border-image-slice: 1 !important;
     border-width: 5px;
     border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
   }
