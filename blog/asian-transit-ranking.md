@@ -1,5 +1,5 @@
 ---
-title: "Ranked Reminiscence: Comparing Asia's metro systems"
+title: "Ranked Reminiscence: Comparing East Asian metro systems"
 date: '2023-07-04'
 hashtags: ['travel', 'asia', 'transit']
 leadingImagePath: '/yamanote.jpg'
