@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta
           name="description"
-          content="My name is Peter Wu and I am a software engineer. After graduating in 2023 from Cornell University with a B.S. in Computer Science, I currently work at Citadel in their NYC office."
+          content="My name is Peter Wu and I am a software engineer. After graduating in 2023 from Cornell University with a B.S. in Computer Science, I currently work at Citadel and am based in NYC."
         />
         <meta property="og:image" content="/ptwuLogoBanner.png" />
 

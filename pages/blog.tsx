@@ -61,7 +61,7 @@ export default function Blog({ allPostsData }: Props) {
               <Tag text={filteringOnTag} hasHashtag />
               <button
                 onClick={() => setFilteringOnTag(null)}
-                className="text-black dark: text-zinc-100"
+                className="text-black dark:text-zinc-100"
               >
                 ×
               </button>
