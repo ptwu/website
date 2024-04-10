@@ -27,6 +27,8 @@ type Props = {
   allPostsData: AllPostsData[];
 };
 
+const WORLD_TRAVEL_MAP_TITLE = 'My world travel map';
+
 export const getNonZeroIndexedDateString = (iso8601String: string): string => {
   const [year, month, day] = iso8601String.split('-').map(Number);
   const date = new Date(year, month - 1, day);
@@ -69,7 +71,10 @@ export default function Blog({ allPostsData }: Props) {
           )}
 
           {/* render posts in a data-driven way */}
-          {allPostsData
+          {[
+              ...allPostsData.filter(({ title }) => title === WORLD_TRAVEL_MAP_TITLE),
+              ...allPostsData.filter(({ title }) => title !== WORLD_TRAVEL_MAP_TITLE),
+            ]
             .filter(
               ({ hashtags }) =>
                 !filteringOnTag || hashtags.includes(filteringOnTag),
@@ -82,7 +87,11 @@ export default function Blog({ allPostsData }: Props) {
                   </h2>
                 </Link>
                 <p className="dark:text-zinc-100 mb-1">
-                  posted on {getNonZeroIndexedDateString(date)}
+                  {
+                    title === WORLD_TRAVEL_MAP_TITLE 
+                      ? '📍 (always updating)'
+                      : `posted on ${getNonZeroIndexedDateString(date)}`
+                  }
                 </p>
                 {hashtags.map((tag, idx) => (
                   <Tag
