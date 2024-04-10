@@ -59,6 +59,18 @@ const Post: React.FC<{ data: PostData }> = ({ data }) => {
             className="dark:text-zinc-100 [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-3 [&_li]:pb-2 [&>p]:mb-3 [&>h1]:text-2xl [&>h1]:font-bold [&>h2]:text-lg [&>h2]:font-bold [&>h2]:mb-3 [&>h1]:mb-3 [&>h1]:mt-8 [&>h3]:mb-3 [&>h3]:mt-3 [&>h3]:text-md [&>h3]:font-bold [&_a]:underline [&_a]:text-blue-500 [&_a]:dark:text-blue-300 [&_code]:mb-2 [&_code]:mt-1 [&_img]:mx-auto [&_img]:w-3/5"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
+          {/* evil hardcoding because i am an evil software engineer! 
+              but seriously, getting iframes to work in rehype is not
+              an easy task. i'm only gonna use this in this blog post,
+              so no matter...
+          */}
+          {title === 'My world travel map' && 
+            <iframe 
+              src="https://www.google.com/maps/d/u/0/embed?mid=1X7sTS5N-riNDqKJDLWgLjKPp9jeSE74&ehbc=2E312F"
+              width="100%"
+              height="700px" 
+            />
+          }
           <Link
             href="/blog"
             className="text-blue-500 dark:text-blue-300 underline"
