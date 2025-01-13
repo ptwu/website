@@ -16,7 +16,7 @@ function useFirstRender() {
 }
 
 export default function Navbar() {
-  const [isInDarkMode, setIsInDarkMode] = useState(false);
+  const [isInDarkMode, setIsInDarkMode] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const firstRender = useFirstRender();
 

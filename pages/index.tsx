@@ -38,7 +38,7 @@ export default function Home() {
               Science from Cornell.
             </p>
             <p className="mt-2">
-              Most recently, I&apos;ve been spending my time doing cloud /
+              Previously, I was involved with cloud /
               distributed computing research with Cornell&apos;s <b>Cascade</b>{' '}
               and <b>Derecho</b> groups, under the supervision of Ken Birman.
               We&apos;re working on a distributed framework for applications
@@ -141,15 +141,6 @@ export default function Home() {
                     Facebook AI&apos;s Detectron2
                   </a>,
                   ' which is based on Mask R-CNN. We then connected this with a TypeScript React webapp allowing users to upload and segment fit images. ',
-                  <a
-                    target="_blank"
-                    className="underline text-blue-500 dark:text-blue-300"
-                    rel="noopener noreferrer"
-                    href="https://www.youtube.com/watch?v=icFoew4bchg/"
-                    key="fitme-2"
-                  >
-                    Demo Video
-                  </a>,
                 ]}
                 image={Fitme}
                 imageAltText="Image of the Fitme interface."
