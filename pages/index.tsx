@@ -29,7 +29,7 @@ export default function Home() {
           <div className="col-span-2">
             <AttentionGrabbingHeading text="Hey, I'm Peter" hasPeriod />
             <p className="mt-2">
-              I&apos;m a software engineer at Citadel. I like music, basketball,
+              I&apos;m a Quantitative Developer at Citadel. I like music, basketball,
               and travel (not in basketball though). Work-wise, I like to
               consider myself a generalist, but I most enjoy working on
               impactful and performant systems with a research-like focus.
