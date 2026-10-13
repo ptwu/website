@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
-import HxhArt from '@/assets/img/hxhart.png';
+import AnimatedHxhArt from '@/components/AnimatedHxhArt';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Portrait from '@/assets/img/peter.png';
@@ -20,11 +20,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <div className="min-h-screen hero container max-w-screen-xl mx-auto pb-10 m-0">
-        <Image
-          src={HxhArt}
-          className="w-full md:w-3/5 mx-auto dark:invert-95"
-          alt="Line art from Hunter x Hunter made by me."
-        />
+        <AnimatedHxhArt />
         <div className="grid mx-auto flex justify-center items-center grid-flow-row lg:grid-flow-col gap-8 container md:px-32 w-full pl-3 pr-3 pb-3 dark:text-zinc-100">
           <div className="col-span-2">
             <AttentionGrabbingHeading text="Hey, I'm Peter" hasPeriod />

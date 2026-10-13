@@ -82,7 +82,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="relative flex flex-wrap items-center justify-between md:px-20 py-10 bg-navtan dark:bg-slate-800">
+    <nav className="relative z-10 flex flex-wrap items-center justify-between md:px-20 py-10 bg-navtan dark:bg-slate-800">
       <div className="md:container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="flex items-center flex-shrink-2 text-white">
           <Link
