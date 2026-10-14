@@ -1,24 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import PtwuLogo from '../../assets/img/ptwulogo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MoonIcon as MoonIconOutline } from '@heroicons/react/24/outline';
 import { MoonIcon as MoonIconSolid } from '@heroicons/react/24/solid';
 
-function useFirstRender() {
-  const firstRender = useRef(true);
-
-  useEffect(() => {
-    firstRender.current = false;
-  }, []);
-
-  return firstRender.current;
-}
-
 export default function Navbar() {
   const [isInDarkMode, setIsInDarkMode] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const firstRender = useFirstRender();
 
   const handleResize = () => {
     if (window.innerWidth <= 1200) {
@@ -28,34 +17,20 @@ export default function Navbar() {
     }
   };
 
-  useEffect(() => {
-    if (firstRender) {
-      return;
-    }
-
-    if (isInDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
-    }
-  }, [isInDarkMode, firstRender]);
+  const toggleTheme = () => {
+    const dark = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    setIsInDarkMode(dark);
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    } catch (_) {}
+  };
 
   useEffect(() => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      setIsInDarkMode(true);
-      document.documentElement.classList.add('dark');
-    } else {
-      setIsInDarkMode(false);
-      document.documentElement.classList.remove('dark');
-    }
+    setIsInDarkMode(document.documentElement.classList.contains('dark'));
     handleResize();
     window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const blogItem = (
@@ -109,17 +84,22 @@ export default function Navbar() {
           <div className="lg:flex flex-grow items-right">{menuItems}</div>
         )}
 
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label={isInDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          className="ml-3 flex-shrink-0"
+        >
         {isInDarkMode ? (
           <MoonIconSolid
-            className="ml-3 flex-shrink-0 h-6 w-6 cursor-pointer invert-95"
-            onClick={() => setIsInDarkMode(false)}
+            className="h-6 w-6 invert-95"
           />
         ) : (
           <MoonIconOutline
-            className="ml-3 flex-shrink-0 h-6 w-6 cursor-pointer"
-            onClick={() => setIsInDarkMode(true)}
+            className="h-6 w-6"
           />
         )}
+        </button>
       </div>
     </nav>
   );
