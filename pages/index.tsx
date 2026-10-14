@@ -146,7 +146,17 @@ export default function Home() {
                   >
                     Derecho
                   </a>,
-                  ' framework to run shard-oriented communication primitives and implement the CCL API. This can run on data in host memory, or data in GPU memory, or take inputs from one source and leave outputs in the other.',
+                  ' framework to run ',
+                  <a
+                    target="_blank"
+                    className="underline text-blue-500 dark:text-blue-300"
+                    rel="noopener noreferrer"
+                    href="https://en.wikipedia.org/wiki/Collective_operation"
+                    key="dccl-collective-operation"
+                  >
+                    shard-oriented communication primitives
+                  </a>,
+                  ' and implement the CCL API. This can run on data in host memory, or data in GPU memory, or take inputs from one source and leave outputs in the other.',
                   <a
                     target="_blank"
                     className="underline text-blue-500 dark:text-blue-300"
