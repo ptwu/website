@@ -3,6 +3,7 @@ import Tag from '../Tag';
 
 type Props = {
   name: string;
+  year: number;
   description: (string | JSX.Element)[] | string;
   image: StaticImageData;
   imageAltText: string;
@@ -11,6 +12,7 @@ type Props = {
 
 export default function ProjectCard({
   name,
+  year,
   description,
   image,
   imageAltText,
@@ -26,7 +28,10 @@ export default function ProjectCard({
         height={1000}
       />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{name}</div>
+        <div className="flex items-baseline justify-between gap-3 mb-2">
+          <div className="font-bold text-xl">{name}</div>
+          <span className="shrink-0 text-sm text-gray-500 dark:text-zinc-300">{year}</span>
+        </div>
         <p className="text-gray-700 text-base dark:text-zinc-100">
           {description}
         </p>

@@ -79,6 +79,7 @@ export default function Home() {
             <div className="grid grid-flow-row lg:grid-flow-col gap-8 mx-auto container w-full pb-3">
               <ProjectCard
                 name="Cascade"
+                year={2023}
                 description={[
                   <a
                     target="_blank"
@@ -107,6 +108,7 @@ export default function Home() {
               />
               <ProjectCard
                 name="Distributed Texas Hold 'Em Poker"
+                year={2020}
                 description={[
                   'To ease the isolation of the pandemic back in Spring 2020, I made this multiplayer web game which implements a classic poker game to play with friends and family. Built with socket.io, Node.js, and Express. ',
                   <a
@@ -125,6 +127,7 @@ export default function Home() {
               />
               <ProjectCard
                 name="DCCL AllReduce"
+                year={2023}
                 description={[
                   'Along with ',
                   <a
