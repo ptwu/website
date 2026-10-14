@@ -38,7 +38,7 @@
 }
 
 .cosmos { position: relative; display: block; width: 100%; height: 100%; }
-.spiral { transform-origin: 400px 400px; animation: galaxy-turn 140s linear infinite; }
+.spiral { transform-origin: 400px 400px; animation: galaxy-turn 70s linear infinite; }
 .dust { fill: #252525; }
 .ice { fill: #737373; }
 .arm { stroke: #404040; stroke-width: 0.7; opacity: 0.32; }
@@ -78,7 +78,7 @@
   position: absolute;
   inset: 0;
   transform-origin: 25% 50%;
-  animation: galaxy-turn 180s linear infinite;
+  animation: galaxy-turn 90s linear infinite;
 }
 
 .stars {
