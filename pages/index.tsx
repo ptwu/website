@@ -126,7 +126,27 @@ export default function Home() {
               <ProjectCard
                 name="DCCL AllReduce"
                 description={[
-                  'Weijia Song and I implemented the AllReduce API for the Derecho Collective Communications Library (DCCL), which uses RDMA for efficient collective communication. I performed all benchmarking comparing DCCL against OpenMPI, using Intel MPI Benchmarks adapted for DCCL. ',
+                  'Along with ',
+                  <a
+                    target="_blank"
+                    className="underline text-blue-500 dark:text-blue-300"
+                    rel="noopener noreferrer"
+                    href="https://www.cs.cornell.edu/~weijia/"
+                    key="dccl-weijia"
+                  >
+                    Weijia Song
+                  </a>,
+                  ', DCCL builds upon the ',
+                  <a
+                    target="_blank"
+                    className="underline text-blue-500 dark:text-blue-300"
+                    rel="noopener noreferrer"
+                    href="https://www.cs.cornell.edu/~weijia/"
+                    key="dccl-derecho"
+                  >
+                    Derecho
+                  </a>,
+                  ' framework to run shard-oriented communication primitives and implement the CCL API. This can run on data in host memory, or data in GPU memory, or take inputs from one source and leave outputs in the other.',
                   <a
                     target="_blank"
                     className="underline text-blue-500 dark:text-blue-300"
