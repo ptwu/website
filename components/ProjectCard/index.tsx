@@ -19,7 +19,7 @@ export default function ProjectCard({
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto dark:text-zinc-100 dark:bg-gray-600 ml-1 mr-1">
       <Image
-        className="w-full"
+        className="h-48 w-full object-contain bg-white"
         src={image.src}
         alt={imageAltText}
         width={1000}
