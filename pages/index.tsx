@@ -8,7 +8,7 @@ import HeroButton from '@/components/HeroButton';
 import ProjectCard from '@/components/ProjectCard';
 import Poker from '@/assets/img/poker.jpg';
 import Cascade from '@/assets/img/cascade.png';
-import Fitme from '@/assets/img/fitme.png';
+import Dccl from '@/assets/img/dccl.svg';
 import AttentionGrabbingHeading from '@/components/AttentionGrabbingHeading';
 import Link from 'next/link';
 
@@ -124,23 +124,32 @@ export default function Home() {
                 tags={['websockets', 'node.js', 'express']}
               />
               <ProjectCard
-                name="fitme"
+                name="DCCL AllReduce"
                 description={[
-                  'fitme is a platform for fashion, powered by computer vision. We built a microservice using Flask, Docker, and ',
+                  'Weijia Song and I implemented the AllReduce API for the Derecho Collective Communications Library (DCCL), which uses RDMA for efficient collective communication. I performed all benchmarking comparing DCCL against OpenMPI, using Intel MPI Benchmarks adapted for DCCL. ',
                   <a
                     target="_blank"
                     className="underline text-blue-500 dark:text-blue-300"
                     rel="noopener noreferrer"
-                    href="https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/"
-                    key="fitme-1"
+                    href="https://github.com/Derecho-Project/dccl"
+                    key="dccl-implementation"
                   >
-                    Facebook AI&apos;s Detectron2
+                    Implementation
                   </a>,
-                  ' which is based on Mask R-CNN. We then connected this with a TypeScript React webapp allowing users to upload and segment fit images. ',
+                  ' · ',
+                  <a
+                    target="_blank"
+                    className="underline text-blue-500 dark:text-blue-300"
+                    rel="noopener noreferrer"
+                    href="https://github.com/ptwu/intel-dccl-mpi-benchmarks"
+                    key="dccl-benchmarks"
+                  >
+                    Benchmarks
+                  </a>,
                 ]}
-                image={Fitme}
-                imageAltText="Image of the Fitme interface."
-                tags={['python', 'pytorch', 'flask', 'react', 'docker']}
+                image={Dccl}
+                imageAltText="AllReduce diagram: four processes contribute values and each receives the combined result."
+                tags={['c++', 'RDMA', 'MPI', 'distributed systems']}
               />
             </div>
           </div>
