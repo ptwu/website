@@ -8,7 +8,7 @@ import HeroButton from '@/components/HeroButton';
 import ProjectCard from '@/components/ProjectCard';
 import Poker from '@/assets/img/poker.jpg';
 import Cascade from '@/assets/img/cascade.png';
-import Dccl from '@/assets/img/dccl.svg';
+import Dccl from '@/assets/img/dccl_allreduce.jpg';
 import AttentionGrabbingHeading from '@/components/AttentionGrabbingHeading';
 import Link from 'next/link';
 
@@ -104,7 +104,7 @@ export default function Home() {
                 ]}
                 image={Cascade}
                 imageAltText="Image of Cascade."
-                tags={['c++', 'c#', 'python', 'linux']}
+                tags={['c++', 'networking', 'distributed systems']}
               />
               <ProjectCard
                 name="Distributed Texas Hold 'Em Poker"
@@ -126,10 +126,10 @@ export default function Home() {
                 tags={['websockets', 'node.js', 'express']}
               />
               <ProjectCard
-                name="DCCL AllReduce"
+                name="Derecho Collective Communications Library"
                 year={2023}
                 description={[
-                  'Along with ',
+                  'Collaborated with ',
                   <a
                     target="_blank"
                     className="underline text-blue-500 dark:text-blue-300"
@@ -139,7 +139,7 @@ export default function Home() {
                   >
                     Weijia Song
                   </a>,
-                  ', DCCL builds upon the ',
+                  ' to create DCCL, which uses the ',
                   <a
                     target="_blank"
                     className="underline text-blue-500 dark:text-blue-300"
@@ -159,30 +159,11 @@ export default function Home() {
                   >
                     shard-oriented communication primitives
                   </a>,
-                  ' and implement the CCL API. This can run on data in host memory, or data in GPU memory, or take inputs from one source and leave outputs in the other.',
-                  <a
-                    target="_blank"
-                    className="underline text-blue-500 dark:text-blue-300"
-                    rel="noopener noreferrer"
-                    href="https://github.com/Derecho-Project/dccl"
-                    key="dccl-implementation"
-                  >
-                    Implementation
-                  </a>,
-                  ' · ',
-                  <a
-                    target="_blank"
-                    className="underline text-blue-500 dark:text-blue-300"
-                    rel="noopener noreferrer"
-                    href="https://github.com/ptwu/intel-dccl-mpi-benchmarks"
-                    key="dccl-benchmarks"
-                  >
-                    Benchmarks
-                  </a>,
+                  '. This can run on data in host memory, or data in GPU memory. We demonstrated that DCCL AllReduce is ~40% faster than OpenMPI w/the Rabenseifner algorithm. ',
                 ]}
                 image={Dccl}
                 imageAltText="AllReduce diagram: four processes contribute values and each receives the combined result."
-                tags={['c++', 'RDMA', 'MPI', 'distributed systems']}
+                tags={['c++', 'networking', 'hpc']}
               />
             </div>
           </div>
