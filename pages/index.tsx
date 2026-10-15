@@ -45,9 +45,6 @@ export default function Home() {
             </p>
             <ul className="mt-6">
               <li className="w-fit inline-block mr-4 mx-auto">
-                <HeroButton name="Resume" link="/Resume.pdf" />
-              </li>
-              <li className="w-fit inline-block mr-4 mx-auto">
                 <HeroButton
                   name="LinkedIn"
                   link="https://www.linkedin.com/in/~peter/"
